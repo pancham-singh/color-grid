@@ -2,21 +2,24 @@ import { memo, useEffect, useState } from 'react';
 import './index.css';
 
 const Colors = memo((props) => {
-
+     // image dim
     const  {height,width} = props
 
     const [img, setImg] = useState(<div>
         Loading image
     </div>);
 
+    //to set rgb color value
     const getColorValue = (row, col) => {
         return `rgb(${row},${col},${width})`;
     };
 
+    //set color background value
     const setBackgroundColor = (row, col) => {
         document.body.style.backgroundColor = getColorValue(row, col);
     };
 
+    //logic to generate image
     const generateImage = () => {
         const gridRows = [];
         for (let y = 1; y < height; y++) {
@@ -43,6 +46,7 @@ const Colors = memo((props) => {
         setImg(gridRows);
     };
 
+    //to hit image generation
     useEffect(() => {
         generateImage();
     }, []);
