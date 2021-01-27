@@ -1,0 +1,17 @@
+.colors {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    width: 256px;
+    height: 128px;
+}
+
+.grid-row {
+    display: flex;
+    flex-direction: row;
+    height: 1px;
+}
+
+.grid-col {
+    width: 1px;
+}
